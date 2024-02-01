@@ -74,6 +74,16 @@
         //    reg-shift = <2>; // regs are spaced on 32 bit boundary
         //    reg-io-width = <4>; // only 32-bit access are supported
         };
+        uart2: uart@/*UART2_ADDR_MACRO*/ {
+            compatible = "ns16550a";
+            reg = <0x/*UART2_ADDR_MACRO*/ 0x1000>;
+            clock-frequency = </*FREQ_MACRO*/>;
+            current-speed = </*BAUD_MACRO*/>;
+        //    interrupt-parent = < &PLIC0 >;
+        //    interrupts = <2>;
+        //    reg-shift = <2>; // regs are spaced on 32 bit boundary
+        //    reg-io-width = <4>; // only 32-bit access are supported
+        };
 
         // Do we need CLINT0 here? OpenSBI already uses it.
         CLINT0: clint@/*CLINT0_ADDR_MACRO*/ {
